@@ -1,4 +1,4 @@
-name: "pvnctl configs apply"
+name: "configs apply"
 description: "Apply Prodvana config files"
 inputs:
   path:
