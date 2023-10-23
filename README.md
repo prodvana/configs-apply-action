@@ -21,15 +21,15 @@ This action is used to automatically apply Prodvana config files in a repository
 
 ```yaml
 steps:
-  # pvnctl must be installed in your Action environment for push-to-prodvana
+  # pvnctl must be installed in your Action environment for configs-apply
   - uses: prodvana/init-pvnctl-action@v0.1.0 
     with:
       org: my-org
       api_token: ${{ secrets.YOUR_PRODVANA_API_TOKEN }}
-  - uses: prodvana/configs-apply@v0.1.0
+  - uses: prodvana/configs-apply-action@v0.1.1
     with:
       path: pvn-configs/...
-  - uses: prodvana/configs-apply@v0.1.0
+  - uses: prodvana/configs-apply-action@v0.1.1
     with:
       path: path/to/a/config.pvn.yaml
 ```
