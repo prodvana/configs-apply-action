@@ -26,10 +26,10 @@ steps:
     with:
       org: my-org
       api_token: ${{ secrets.YOUR_PRODVANA_API_TOKEN }}
-  - uses: prodvana/configs-apply-action@v0.1.0
+  - uses: prodvana/configs-apply-action@v0.1.1
     with:
       path: pvn-configs/...
-  - uses: prodvana/configs-apply-action@v0.1.0
+  - uses: prodvana/configs-apply-action@v0.1.1
     with:
       path: path/to/a/config.pvn.yaml
 ```
