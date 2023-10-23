@@ -1,0 +1,21 @@
+name: "configs apply"
+description: "Apply Prodvana config files"
+inputs:
+  path:
+    description: "Path to configs to apply. Can include ... to apply all subdirectories."
+    required: true
+  auth_context:
+    description: "pvnctl auth context to use. If you're using this Action with init-pvnctl, leave as the default"
+    required: true
+    default: "default"
+outputs: {}
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v3
+    - name: pvnctl configs apply
+      shell: bash
+      run: |
+        set -euxo pipefail
+        pvnctl auth context use ${{ inputs.auth_context }}
+        pvnctl configs apply ${{ inputs.path }}
